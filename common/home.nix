@@ -44,8 +44,8 @@
     manix
 
     # comms
-    #skypeforlinux # flatpak now
-    #teams-for-linux # flatpak now
+    skypeforlinux
+    teams-for-linux
 
     # passwords
     keepassxc
@@ -76,6 +76,8 @@
 
     # torrent
     transmission
+
+    gnomeExtensions.tray-icons-reloaded
   ];
 
   # git
