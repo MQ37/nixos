@@ -162,6 +162,11 @@
       workspaces-only-on-primary = true;
       edge-tiling = true;
     };
+    "org/gnome/shell" = {
+      enabled-extensions = [
+        "trayIconsReloaded@selfmade.pl"
+      ];
+    };
   };
 
 
