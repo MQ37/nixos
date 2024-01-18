@@ -50,6 +50,7 @@
   services.xserver.libinput.enable = true;
 
   # fonts
+  fonts.fontDir.enable = true;
   fonts.packages = with pkgs; [
     nerdfonts
   ]; 

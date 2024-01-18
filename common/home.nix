@@ -21,8 +21,13 @@
     lsof
     ncdu
 
+    # vim stuff
+    fzf
+    xclip
+
     # langs
-    python3
+    (python3.withPackages (ps: with ps; [
+    ]))
 
     # terminals
     gnome-console
@@ -77,6 +82,7 @@
     # torrent
     transmission
 
+    # gnome
     gnomeExtensions.tray-icons-reloaded
   ];
 
@@ -86,17 +92,56 @@
     #userName = "";
     #userEmail = "";
   };
-  # alacritty terminal
-  programs.alacritty = {
+  # urxvt fix
+  programs.readline = {
     enable = true;
+    extraConfig = ''
+    # ctrl arrows
+    "\e[1;5C": forward-word
+    "\e[1;5D": backward-word
+    "\eOc": forward-word
+    "\eOd": backward-word
+
+    # alt arrow
+    "\e[1;3D": backward-word
+    "\e[1;3C": forward-word
+    "\e\e[D": backward-word
+    "\e\e[C": forward-word
+
+    ### ctrl+backspace
+    "\C-h": backward-kill-word
+    '';
+  };
+  # urxvt terminal
+  programs.urxvt = {
+    enable = true;
+    keybindings = {
+     "Shift-Control-C" = "eval:selection_to_clipboard";
+     "Shift-Control-V" = "eval:paste_clipboard";
+   };
+   fonts = [
+     "xft:Liberation Mono:size=10"
+   ];
+   iso14755 = false;
+   extraConfig = {
+     "geometry" = "100x24";
+     "metaSendsEscape" = true; "vt100.metaSendsEscape" = true;
+     "foreground" = "white";
+     "background" = "black";
+   };
   };
   # neovim
   programs.neovim = {
     enable = true;
     vimAlias = true;
-    extraConfig = ''
-      set number relativenumber
-    '';
+    extraConfig = import ./home/neovimrc.nix;
+    plugins = with pkgs.vimPlugins; [
+      nvim-web-devicons	# icons
+      nerdtree		    # file explorer
+      fzf-vim           # fuzzy find
+      ultisnips         # snippets
+      vim-snippets
+    ];
   };
   # bash
   programs.bash = {
@@ -150,7 +195,7 @@
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Alt>Return";
-      command = "kgx"; # gnome-console
+      command = "urxvt";
       name = "Terminal";
     };
     # laptop touchpad tap to click
