@@ -21,6 +21,9 @@
     lsof
     ncdu
 
+    # devel
+    gcc
+
     # vim stuff
     fzf
     xclip
@@ -28,6 +31,7 @@
     # langs
     (python3.withPackages (ps: with ps; [
     ]))
+    rustc cargo rust-analyzer
 
     # terminals
     gnome-console
@@ -44,6 +48,8 @@
     nmap
     ipcalc  # it is a calculator for the IPv4/v6 addresses
     openvpn
+    tcpdump
+    tcpflow
 
     # nix stiff
     manix
@@ -69,6 +75,7 @@
     # haxy stuff
     wireshark
     #ghidra
+    dsniff
 
     # tools
     onionshare-gui
@@ -135,6 +142,7 @@
     enable = true;
     vimAlias = true;
     extraConfig = import ./home/neovimrc.nix;
+    extraLuaConfig = import ./home/neovimluarc.nix;
     plugins = with pkgs.vimPlugins; [
       nvim-web-devicons	# icons
       nerdtree		    # file explorer
@@ -142,6 +150,20 @@
       ultisnips         # snippets
       vim-snippets
     ];
+    coc = {
+      enable = true;
+      settings = {
+        languageserver = {
+          rust = {
+            command = "rust-analyzer";
+            rootPatterns = [
+              "Cargo.toml"
+            ];
+            filetypes = [ "rust" ];
+          };
+        };
+      };
+    };
   };
   # bash
   programs.bash = {
