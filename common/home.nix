@@ -30,7 +30,10 @@
 
     # langs
     (python3.withPackages (ps: with ps; [
+      jedi python-lsp-server
     ]))
+    poetry
+
     rustc cargo rust-analyzer
 
     # terminals
@@ -133,8 +136,26 @@
    extraConfig = {
      "geometry" = "100x24";
      "metaSendsEscape" = true; "vt100.metaSendsEscape" = true;
-     "foreground" = "white";
-     "background" = "black";
+     #"foreground" = "white";
+     #"background" = "black";
+     "background" = "#000000";
+     "foreground" = "#B2B2B2";
+     "color0" =  "#000000";
+     "color8" =  "#686868";
+     "color1" =  "#B21818";
+     "color9" =  "#FF5454";
+     "color2" =  "#18B218";
+     "color10" = "#54FF54";
+     "color3" =  "#B26818";
+     "color11" = "#FFFF54";
+     "color4" =  "#1818B2";
+     "color12" = "#5454FF";
+     "color5" =  "#B218B2";
+     "color13" = "#FF54FF";
+     "color6" =  "#18B2B2";
+     "color14" = "#54FFFF";
+     "color7" =  "#B2B2B2";
+     "color15" = "#FFFFFF";
    };
   };
   # neovim
@@ -160,6 +181,14 @@
               "Cargo.toml"
             ];
             filetypes = [ "rust" ];
+          };
+          python = {
+            command = "pylsp";
+            rootPatterns = [
+              "pyproject.toml"
+              "main.py"
+            ];
+            filetypes = [ "python" ];
           };
         };
       };
