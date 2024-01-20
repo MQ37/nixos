@@ -53,6 +53,8 @@
   fonts.fontDir.enable = true;
   fonts.packages = with pkgs; [
     nerdfonts
+    powerline-fonts
+    powerline-symbols
   ]; 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

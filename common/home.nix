@@ -131,6 +131,7 @@
    };
    fonts = [
      "xft:Liberation Mono:size=10"
+     "xft:DejaVu Sans Mono for Powerline:size=10"
    ];
    iso14755 = false;
    extraConfig = {
@@ -168,8 +169,12 @@
       nvim-web-devicons	# icons
       nerdtree		    # file explorer
       fzf-vim           # fuzzy find
-      ultisnips         # snippets
-      vim-snippets
+      { plugin = vim-airline;
+        config = ''
+        let g:airline_powerline_fonts = 1
+        '';
+      }
+      coc-ultisnips
     ];
     coc = {
       enable = true;
@@ -200,8 +205,11 @@
     bashrcExtra =
     let file = ../local/bashrc.nix;
       exists = builtins.pathExists file;
+      common = ''
+        alias venv="source ./venv/bin/activate"
+      '';
     in
-      if exists then (import file) else "";
+      if exists then common + (import file) else common;
   };
   # vscode
   programs.vscode.enable = true;
