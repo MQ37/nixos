@@ -27,14 +27,16 @@
     # vim stuff
     fzf
     xclip
+    ripgrep
 
     # langs
     (python3.withPackages (ps: with ps; [
       jedi python-lsp-server
-    ]))
-    poetry
-
+    ])) poetry
     rustc cargo rust-analyzer
+    nodejs_21
+    nodePackages.typescript-language-server
+    nodePackages.svelte-language-server
 
     # terminals
     gnome-console
@@ -163,41 +165,29 @@
   programs.neovim = {
     enable = true;
     vimAlias = true;
-    extraConfig = import ./home/neovimrc.nix;
-    extraLuaConfig = import ./home/neovimluarc.nix;
+    extraLuaConfig = import ./home/neovim/init.lua.nix;
     plugins = with pkgs.vimPlugins; [
-      nvim-web-devicons	# icons
-      nerdtree		    # file explorer
-      fzf-vim           # fuzzy find
-      { plugin = vim-airline;
-        config = ''
-        let g:airline_powerline_fonts = 1
-        '';
-      }
-      coc-ultisnips
+      vim-airline                           # nice statusbar
+      telescope-nvim                        # fuzzy search
+      plenary-nvim
+      (nvim-treesitter.withPlugins (p: [    # nice syntax highlight
+        p.c p.cpp p.python p.rust p.javascript p.typescript p.svelte
+        p.nix
+      ]))
+      vim-fugitive                          # git
+
+      # LSP section
+      lsp-zero-nvim
+      nvim-lspconfig
+      nvim-cmp
+      cmp-buffer
+      cmp-path
+      cmp_luasnip
+      cmp-nvim-lsp
+      cmp-nvim-lua
+      luasnip
+      friendly-snippets
     ];
-    coc = {
-      enable = true;
-      settings = {
-        languageserver = {
-          rust = {
-            command = "rust-analyzer";
-            rootPatterns = [
-              "Cargo.toml"
-            ];
-            filetypes = [ "rust" ];
-          };
-          python = {
-            command = "pylsp";
-            rootPatterns = [
-              "pyproject.toml"
-              "main.py"
-            ];
-            filetypes = [ "python" ];
-          };
-        };
-      };
-    };
   };
   # bash
   programs.bash = {
@@ -205,14 +195,10 @@
     bashrcExtra =
     let file = ../local/bashrc.nix;
       exists = builtins.pathExists file;
-      common = ''
-        alias venv="source ./venv/bin/activate"
-      '';
+      common = import ./home/bash/bashrc.nix;
     in
       if exists then common + (import file) else common;
   };
-  # vscode
-  programs.vscode.enable = true;
 
   # syncthing
   services.syncthing.enable = true;
