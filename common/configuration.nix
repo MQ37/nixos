@@ -24,7 +24,6 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
     font = "Lat2-Terminus16";
-    #keyMap = "cz";
     useXkbConfig = true; # use xkb.options in tty.
   };
 
@@ -36,7 +35,7 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkb.layout = "cz";
+  services.xserver.xkb.layout = "us";
   services.xserver.xkb.options = "caps:escape";
 
   # Enable CUPS to print documents.

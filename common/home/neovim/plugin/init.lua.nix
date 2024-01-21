@@ -4,3 +4,4 @@
 + import ./treesitter.lua.nix
 + import ./fugitive.lua.nix
 + import ./lsp.lua.nix
++ import ./airline.lua.nix

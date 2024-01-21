@@ -257,6 +257,9 @@
         "trayIconsReloaded@selfmade.pl"
       ];
     };
+    "org/gnome/desktop/input-sources" = {
+      sources = [ [ "xkb" "us" ] ];
+    };
   };
 
 
