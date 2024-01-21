@@ -32,6 +32,7 @@
     # langs
     (python3.withPackages (ps: with ps; [
       jedi python-lsp-server
+      requests
     ])) poetry
     rustc cargo rust-analyzer
     nodejs_21
@@ -70,9 +71,9 @@
     # multimedia
     gimp
     audacity
-
-    # video
     vlc
+    yt-dlp
+    ffmpeg
 
     # docs
     libreoffice
@@ -93,6 +94,7 @@
 
     # torrent
     transmission
+    transmission-remote-gtk
 
     # gnome
     gnomeExtensions.tray-icons-reloaded
