@@ -201,6 +201,11 @@
     in
       if exists then common + (import file) else common;
   };
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
+  };
 
   # syncthing
   services.syncthing.enable = true;
