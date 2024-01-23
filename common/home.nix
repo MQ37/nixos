@@ -209,6 +209,19 @@
     nix-direnv.enable = true;
   };
   programs.chromium.enable = true;
+  programs.zellij = {
+    enable = true;
+    settings = {
+      keybinds = {
+        unbind = "Ctrl b";
+        normal = {
+          "bind \"Ctrl a\"" = {
+            SwitchToMode = "tmux";
+          };
+        };
+      };
+    };
+  };
 
   # syncthing
   services.syncthing.enable = true;

@@ -115,4 +115,10 @@
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+
+  environment.variables = {
+    EDITOR = "vim";
+    VISUAL = "vim";
+  };
 }
