@@ -189,6 +189,7 @@
       cmp-nvim-lua
       luasnip
       friendly-snippets
+      cmp-buffer
     ];
   };
   # bash
@@ -201,11 +202,13 @@
     in
       if exists then common + (import file) else common;
   };
+  # direnv - persistent envs
   programs.direnv = {
     enable = true;
     enableBashIntegration = true;
     nix-direnv.enable = true;
   };
+  programs.chromium.enable = true;
 
   # syncthing
   services.syncthing.enable = true;
