@@ -21,6 +21,8 @@
     lsof
     ncdu
 
+    httpie
+
     # devel
     gcc
 
