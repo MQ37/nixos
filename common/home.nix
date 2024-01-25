@@ -235,6 +235,7 @@
     };
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Shift><Alt>c" ];
+      maximize=["<Shift><Alt>Up"];
       move-to-workspace-1 = ["<Shift><Alt>1"];
       move-to-workspace-2 = ["<Shift><Alt>2"];
       move-to-workspace-3 = ["<Shift><Alt>3"];
