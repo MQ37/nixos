@@ -192,6 +192,9 @@
       luasnip
       friendly-snippets
       cmp-buffer
+
+      # copilot
+      copilot-lua
     ];
   };
   # bash

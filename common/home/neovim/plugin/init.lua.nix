@@ -5,3 +5,4 @@
 + import ./fugitive.lua.nix
 + import ./lsp.lua.nix
 + import ./airline.lua.nix
++ import ./copilot.lua.nix
