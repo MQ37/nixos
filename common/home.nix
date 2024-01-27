@@ -276,6 +276,7 @@
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
       two-finger-scrolling-enabled = true;
+      natural-scroll = false;
     };
     "org/gnome/mutter" = {
       workspaces-only-on-primary = true;
