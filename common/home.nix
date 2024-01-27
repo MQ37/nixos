@@ -23,6 +23,9 @@
 
     httpie
 
+    ansible
+    sshpass
+
     # devel
     gcc
 
@@ -97,6 +100,9 @@
     # torrent
     transmission
     transmission-remote-gtk
+
+    # games
+    prismlauncher
 
     # gnome
     gnomeExtensions.tray-icons-reloaded

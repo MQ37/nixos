@@ -11,6 +11,11 @@ require("copilot").setup({
       prev = "<M-[>",
       dismiss = "<C-]>",
     },
+  },
+  filetypes = {
+    yaml = true,
+    markdown = true,
+    ["."] = true,
   }
 })
 
