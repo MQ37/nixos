@@ -22,6 +22,7 @@
     ncdu
 
     httpie
+    openssl
 
     ansible
     sshpass
