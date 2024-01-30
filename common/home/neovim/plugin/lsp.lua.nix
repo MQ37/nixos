@@ -36,4 +36,5 @@ require('lspconfig').pylsp.setup({})
 require('lspconfig').rust_analyzer.setup({})
 require('lspconfig').tsserver.setup({})
 require('lspconfig').svelte.setup({})
+require('lspconfig').tailwindcss.setup({})
 ''

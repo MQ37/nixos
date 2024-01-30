@@ -40,10 +40,11 @@
       jedi python-lsp-server
       requests
     ])) poetry
-    rustc cargo rust-analyzer
+    rustc cargo rust-analyzer # rust stuff
     nodejs_21
-    nodePackages.typescript-language-server
-    nodePackages.svelte-language-server
+    nodePackages.typescript-language-server # ts lsp
+    nodePackages.svelte-language-server # svelte lsp
+    tailwindcss-language-server # tailwindcss lsp
 
     # terminals
     gnome-console
