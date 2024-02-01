@@ -6,3 +6,4 @@
 + import ./lsp.lua.nix
 + import ./airline.lua.nix
 + import ./copilot.lua.nix
++ import ./slime.lua.nix

@@ -27,6 +27,8 @@
     ansible
     sshpass
 
+    devbox
+
     # devel
     gcc
 
@@ -187,6 +189,7 @@
         p.nix
       ]))
       vim-fugitive                          # git
+      vim-slime                             # interactive repl
 
       # LSP section
       lsp-zero-nvim

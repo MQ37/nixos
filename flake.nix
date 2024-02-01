@@ -17,8 +17,6 @@
         modules = [
           ./hosts/laptop/configuration.nix
 
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -26,7 +24,7 @@
 
             home-manager.users.mq = import ./hosts/laptop/home.nix;
 
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+            #home-manager.extraSpecialArgs = { devenv = inputs.devenv; };
           }
         ];
       };
@@ -36,8 +34,6 @@
         modules = [
           ./hosts/desktop/configuration.nix
 
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -45,7 +41,7 @@
 
             home-manager.users.mq = import ./hosts/desktop/home.nix;
 
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+            #home-manager.extraSpecialArgs = { devenv = inputs.devenv; };
           }
         ];
       };
