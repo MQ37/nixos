@@ -6,6 +6,8 @@
 
   # User profile packages
   home.packages = with pkgs; [
+    home-manager
+
     neofetch
     nnn # terminal file manager
     tmux
