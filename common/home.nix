@@ -72,6 +72,7 @@
     # comms
     skypeforlinux
     teams-for-linux
+    thunderbird
 
     # passwords
     keepassxc
