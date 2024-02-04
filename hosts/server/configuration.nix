@@ -85,6 +85,8 @@
     apiKeyFile = "/var/lib/longview/apiKeyFile";
   };
 
+  services.ntp.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
