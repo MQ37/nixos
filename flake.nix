@@ -7,9 +7,18 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    simple-nixos-mailserver = {
+      url = "gitlab:simple-nixos-mailserver/nixos-mailserver/nixos-23.11";
+      inputs.nixpkgs-23_11.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self
+            , nixpkgs
+            , home-manager
+            , simple-nixos-mailserver
+            , ...
+            }@inputs: {
     nixosConfigurations = {
 
       nixos-laptop = nixpkgs.lib.nixosSystem {
@@ -50,7 +59,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/server/configuration.nix
-          ./hosts/server/mailserver.nix
+          simple-nixos-mailserver.nixosModules.mailserver
         ];
       };
 
