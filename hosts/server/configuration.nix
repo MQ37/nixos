@@ -88,6 +88,18 @@
 
   services.ntp.enable = true;
 
+  services.fail2ban = {
+    enable = true;
+    jails = {
+      sshd.settings = {
+        filter = "sshd";
+        action = ''iptables[name=ssh, port=ssh, protocol=tcp]'';
+        maxretry = 5;
+        bantime  = 3600;
+      };
+    };
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
