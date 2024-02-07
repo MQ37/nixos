@@ -49,6 +49,7 @@
     nodePackages.typescript-language-server # ts lsp
     nodePackages.svelte-language-server # svelte lsp
     tailwindcss-language-server # tailwindcss lsp
+    dotnet-sdk_8 # dotnet
 
     # terminals
     gnome-console
