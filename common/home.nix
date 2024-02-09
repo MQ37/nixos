@@ -49,7 +49,8 @@
     nodePackages.typescript-language-server # ts lsp
     nodePackages.svelte-language-server # svelte lsp
     tailwindcss-language-server # tailwindcss lsp
-    dotnet-sdk_8 # dotnet
+    dotnet-sdk_7 # dotnet
+    csharp-ls # csharp lsp
 
     # terminals
     gnome-console
@@ -188,9 +189,9 @@
       vim-airline                           # nice statusbar
       telescope-nvim                        # fuzzy search
       plenary-nvim
-      (nvim-treesitter.withPlugins (p: [    # nice syntax highlight
-        p.c p.cpp p.python p.rust p.javascript p.typescript p.svelte
-        p.nix
+      (nvim-treesitter.withPlugins (p: with p;[    # nice syntax highlight
+        c cpp python rust javascript typescript svelte
+        nix c_sharp
       ]))
       vim-fugitive                          # git
       vim-slime                             # interactive repl

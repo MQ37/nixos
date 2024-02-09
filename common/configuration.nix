@@ -120,5 +120,6 @@
   environment.variables = {
     EDITOR = "vim";
     VISUAL = "vim";
+    DOTNET_CLI_TELEMETRY_OPTOUT = "1";
   };
 }
