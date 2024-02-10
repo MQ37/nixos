@@ -104,6 +104,7 @@
 
     # wallets
     sparrow
+    monero-gui
 
     # torrent
     transmission
