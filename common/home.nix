@@ -29,8 +29,6 @@
     ansible
     sshpass
 
-    devbox
-
     # devel
     gcc
 
@@ -88,6 +86,7 @@
     vlc
     yt-dlp
     ffmpeg
+    qrencode
 
     # docs
     libreoffice
