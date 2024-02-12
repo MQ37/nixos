@@ -47,8 +47,8 @@
     nodePackages.typescript-language-server # ts lsp
     nodePackages.svelte-language-server # svelte lsp
     tailwindcss-language-server # tailwindcss lsp
-    dotnet-sdk_7 # dotnet
-    csharp-ls # csharp lsp
+    dotnet-sdk_8 # dotnet
+    inputs.inputs.mynixpkgs.csharp-ls_8.x86_64-linux
 
     # terminals
     gnome-console

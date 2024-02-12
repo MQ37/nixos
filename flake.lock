@@ -32,6 +32,24 @@
         "type": "github"
       }
     },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1705309234,
+        "narHash": "sha256-uNRRNRKmJyCRC/8y1RqBkqWBLM034y4qN7EprSdmgyA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "1ef2e671c3b0c19053962c07dbda38332dcebf26",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -50,6 +68,27 @@
         "owner": "nix-community",
         "ref": "release-23.11",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "mynixpkgs": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1707751875,
+        "narHash": "sha256-hvhnboBmTy95Oz25j/WG5xeVbJ6bBaisSRkGR36uYL8=",
+        "owner": "MQ37",
+        "repo": "mynixpkgs",
+        "rev": "4764dd19e2164a080ca7beba3c951b497cc60269",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MQ37",
+        "repo": "mynixpkgs",
         "type": "github"
       }
     },
@@ -101,6 +140,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "mynixpkgs": "mynixpkgs",
         "nixpkgs": "nixpkgs",
         "simple-nixos-mailserver": "simple-nixos-mailserver"
       }
@@ -129,6 +169,21 @@
         "ref": "nixos-23.11",
         "repo": "nixos-mailserver",
         "type": "gitlab"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
       }
     },
     "utils": {

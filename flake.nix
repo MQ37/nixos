@@ -11,12 +11,17 @@
       url = "gitlab:simple-nixos-mailserver/nixos-mailserver/nixos-23.11";
       inputs.nixpkgs-23_11.follows = "nixpkgs";
     };
+    mynixpkgs = {
+      url = "github:MQ37/mynixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self
             , nixpkgs
             , home-manager
             , simple-nixos-mailserver
+            , mynixpkgs
             , ...
             }@inputs: {
     nixosConfigurations = {
@@ -33,7 +38,10 @@
 
             home-manager.users.mq = import ./hosts/laptop/home.nix;
 
-            #home-manager.extraSpecialArgs = { devenv = inputs.devenv; };
+            home-manager.extraSpecialArgs = {
+              #devenv = inputs.devenv;
+              inherit (inputs) mynixpkgs;
+            };
           }
         ];
       };
@@ -50,7 +58,10 @@
 
             home-manager.users.mq = import ./hosts/desktop/home.nix;
 
-            #home-manager.extraSpecialArgs = { devenv = inputs.devenv; };
+            home-manager.extraSpecialArgs = {
+              #devenv = inputs.devenv;
+              inherit (inputs) mynixpkgs;
+            };
           }
         ];
       };
