@@ -126,7 +126,7 @@
     #userName = "";
     #userEmail = "";
   };
-  # urxvt fix
+  # readline
   programs.readline = {
     enable = true;
     extraConfig = ''

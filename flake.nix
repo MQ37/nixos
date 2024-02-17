@@ -71,6 +71,18 @@
         modules = [
           ./hosts/server/configuration.nix
           simple-nixos-mailserver.nixosModules.mailserver
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.mq = import ./hosts/server/home.nix;
+
+            home-manager.extraSpecialArgs = {
+            };
+          }
+
         ];
       };
 
