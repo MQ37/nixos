@@ -29,6 +29,9 @@
     ansible
     sshpass
 
+    # ssg
+    zola
+
     # devel
     gcc
 
@@ -68,7 +71,7 @@
     tcpdump
     tcpflow
 
-    # nix stiff
+    # nix stuff
     manix
 
     # comms
