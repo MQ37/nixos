@@ -4,6 +4,11 @@
   home.username = "mq";
   home.homeDirectory = "/home/mq";
 
+  # Environment
+  home.sessionVariables = {
+    TERM = "xterm";
+  };
+
   # User profile packages
   home.packages = with pkgs; [
     home-manager

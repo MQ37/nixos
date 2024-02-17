@@ -101,6 +101,14 @@
       };
     };
   };
+  services.nginx.enable = true;
+  services.nginx.virtualHosts."kopecky.io" = {
+      addSSL = true;
+      enableACME = true;
+      root = "/var/www/kopecky.io";
+  };
+  security.acme.acceptTerms = true;
+  security.acme.defaults.email = "security@kopecky.io";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -108,6 +116,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   networking.firewall.allowPing = false;
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
