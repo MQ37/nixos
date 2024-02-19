@@ -1,4 +1,8 @@
-{ config, pkgs, ... }@inputs:
+{ config
+  , pkgs
+  , pkgs-unstable
+  , ...
+}@inputs:
 
 {
   home.username = "mq";
@@ -51,7 +55,7 @@
     nodePackages.svelte-language-server # svelte lsp
     tailwindcss-language-server # tailwindcss lsp
     dotnet-sdk_8 # dotnet
-    inputs.inputs.mynixpkgs.csharp-ls_8.x86_64-linux
+    pkgs-unstable.csharp-ls
 
     # terminals
     gnome-console

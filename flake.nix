@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +20,7 @@
 
   outputs = { self
             , nixpkgs
+            , nixpkgs-unstable
             , home-manager
             , simple-nixos-mailserver
             , mynixpkgs
@@ -26,7 +28,7 @@
             }@inputs: {
     nixosConfigurations = {
 
-      nixos-laptop = nixpkgs.lib.nixosSystem {
+      nixos-laptop = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         modules = [
           ./hosts/laptop/configuration.nix
@@ -39,14 +41,17 @@
             home-manager.users.mq = import ./hosts/laptop/home.nix;
 
             home-manager.extraSpecialArgs = {
-              #devenv = inputs.devenv;
               inherit (inputs) mynixpkgs;
+              pkgs-unstable = import inputs.nixpkgs-unstable {
+                  system = system;
+                  config.allowUnfree = true;
+              };
             };
           }
         ];
       };
 
-      nixos-desktop = nixpkgs.lib.nixosSystem {
+      nixos-desktop = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         modules = [
           ./hosts/desktop/configuration.nix
@@ -59,8 +64,11 @@
             home-manager.users.mq = import ./hosts/desktop/home.nix;
 
             home-manager.extraSpecialArgs = {
-              #devenv = inputs.devenv;
               inherit (inputs) mynixpkgs;
+              pkgs-unstable = import inputs.nixpkgs-unstable {
+                  system = system;
+                  config.allowUnfree = true;
+              };
             };
           }
         ];
