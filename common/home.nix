@@ -33,6 +33,8 @@
     ansible
     sshpass
 
+    sqlite
+
     # ssg
     zola
 
