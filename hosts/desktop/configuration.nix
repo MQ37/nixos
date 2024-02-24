@@ -12,6 +12,28 @@ common // {
       ./hardware-configuration.nix
     ];
 
+  # Enable Nvidia and OpenGL
+  hardware = common.hardware // {
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
+      open = false;
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
+  };
+  services = common.services // {
+    xserver = common.services.xserver // {
+      videoDrivers = [ "nvidia" ];
+    };
+  };
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
