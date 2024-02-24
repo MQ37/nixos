@@ -104,6 +104,8 @@
     wireshark
     #ghidra
     dsniff
+    tor 
+    torsocks 
 
     # tools
     onionshare-gui
