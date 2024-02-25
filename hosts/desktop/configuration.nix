@@ -33,6 +33,12 @@ common // {
       videoDrivers = [ "nvidia" ];
     };
   };
+  # nvidia docker
+  virtualisation = common.virtualisation // {
+    docker = common.virtualisation.docker // {
+      enableNvidia = true;
+    };
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
