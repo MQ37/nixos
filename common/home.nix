@@ -117,8 +117,7 @@
     monero-gui
 
     # torrent
-    transmission
-    transmission-remote-gtk
+    transmission-gtk
 
     # games
     prismlauncher
