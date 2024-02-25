@@ -23,7 +23,6 @@
     gnused
     gnutar
     gawk
-    gnupg
     lsof
     ncdu
 
@@ -255,8 +254,19 @@
     };
   };
 
+  # gpg
+  programs.gpg.enable = true;
+
   # syncthing
   services.syncthing.enable = true;
+
+  # gpg-agent
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true;
+    enableBashIntegration = true;
+    pinentryFlavor = "curses";
+  };
 
   # GNOME settings
   dconf.settings = {
