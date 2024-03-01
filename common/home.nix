@@ -16,6 +16,7 @@
     nnn # terminal file manager
     tmux
     htop
+    btop
     neofetch
     file
     which
