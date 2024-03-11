@@ -80,6 +80,9 @@
     # nix stuff
     manix
 
+    # nix helpers
+    appimage-run
+
     # comms
     skypeforlinux
     teams-for-linux
