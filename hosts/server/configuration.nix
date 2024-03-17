@@ -15,6 +15,8 @@
   # Enable Flakes and the new command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # tmp on tmpfs
+  boot.tmp.useTmpfs = true;
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
