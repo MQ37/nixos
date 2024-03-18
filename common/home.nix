@@ -87,6 +87,7 @@
     skypeforlinux
     teams-for-linux
     thunderbird
+    zoom-us
 
     # passwords
     keepassxc
