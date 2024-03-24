@@ -106,7 +106,7 @@
 
     # haxy stuff
     wireshark
-    #ghidra
+    ghidra
     dsniff
     tor 
     torsocks 
