@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +25,7 @@
             , home-manager
             , simple-nixos-mailserver
             , mynixpkgs
+            , nixos-hardware
             , ...
             }@inputs: {
     nixosConfigurations = {
@@ -86,6 +88,26 @@
             home-manager.useUserPackages = true;
 
             home-manager.users.mq = import ./hosts/server/home.nix;
+
+            home-manager.extraSpecialArgs = {
+            };
+          }
+
+        ];
+      };
+
+      nixos-rpi = nixpkgs-unstable.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          nixos-hardware.nixosModules.raspberry-pi-4
+          ./hosts/rpi/configuration.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.mq = import ./hosts/rpi/home.nix;
 
             home-manager.extraSpecialArgs = {
             };
