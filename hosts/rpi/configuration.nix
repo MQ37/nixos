@@ -23,6 +23,16 @@
 
   networking.hostName = "nixos-rpi"; # Define your hostname.
   #networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.interfaces."wlan0".useDHCP =
+    let file = ../../local/wireless.nix;
+      exists = builtins.pathExists file;
+    in
+      if exists then true else false;
+  networking.wireless =
+    let file = ../../local/wireless.nix;
+      exists = builtins.pathExists file;
+    in
+      if exists then (import file) else {};
 
   # Set your time zone.
   time.timeZone = "Europe/Prague";
