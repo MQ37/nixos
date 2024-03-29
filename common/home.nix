@@ -129,6 +129,8 @@
 
     # gnome
     gnomeExtensions.tray-icons-reloaded
+
+    xorg.xhost
   ];
 
   # git
