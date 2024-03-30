@@ -47,6 +47,8 @@
     tcpflow
 
     cryptsetup
+
+    python3
   ];
 
   # git

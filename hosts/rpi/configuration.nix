@@ -92,6 +92,12 @@
 
   services.ntp.enable = true;
 
+  services.syncthing = {
+    enable = true;
+    user = "mq";
+    dataDir = "/disks/data/syncthing";
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
