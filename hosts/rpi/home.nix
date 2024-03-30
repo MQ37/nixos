@@ -45,6 +45,8 @@
     socat # openbsd-netcat alternative
     tcpdump
     tcpflow
+
+    cryptsetup
   ];
 
   # git

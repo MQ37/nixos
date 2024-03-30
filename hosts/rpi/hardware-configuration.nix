@@ -8,16 +8,61 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+  #boot.initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
   boot.initrd.availableKernelModules = [ "xhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
+  #boot.kernelParams = [
+  #  "boot.shell_on_fail"
+  #];
+
+  #boot.initrd.luks.devices = {
+  #  data = {
+  #    device = "/dev/disk/by-uuid/47c51a19-c455-4f2d-b00e-d4ed7e2e9e16";
+  #    #keyFile = "/mnt-root/keystore/47c51a19.key";
+  #    keyFile = "/sysroot/keystore/47c51a19.key";
+  #    fallbackToPassword = true;
+  #  };
+  #};
+
+  environment.etc."crypttab".text = ''
+    data /dev/disk/by-uuid/47c51a19-c455-4f2d-b00e-d4ed7e2e9e16 /keystore/47c51a19.key
+    dataa /dev/disk/by-uuid/ea544a6a-ae53-4f71-9339-6cb66e633640 /keystore/ea544a6a.key
+    datab /dev/disk/by-uuid/1d71f8ac-83c8-4094-bcd2-478751d3c597 /keystore/1d71f8ac.key
+  '';
 
   fileSystems."/" =
-    { #device = "/dev/disk/by-uuid/44444444-4444-4444-8888-888888888888";
+    { 
       device = "/dev/disk/by-label/NIXOS_SD";
       fsType = "ext4";
     };
+  fileSystems."/disks/data" =
+    {
+      depends = [ "/" ];
+      device = "/dev/mapper/data";
+    };
+  fileSystems."/disks/dataa" =
+    {
+      depends = [ "/" ];
+      device = "/dev/mapper/dataa";
+    };
+  fileSystems."/disks/datab" =
+    {
+      depends = [ "/" ];
+      device = "/dev/mapper/datab";
+    };
+  #fileSystems."/disks/data" =
+  #  { #device = "/dev/disk/by-uuid/47c51a19-c455-4f2d-b00e-d4ed7e2e9e16";
+  #    device = "/dev/mapper/data";
+  #    fsType = "ext4";
+  #    encrypted = {
+  #      enable = true;
+  #      keyFile = "/mnt-root/keystore/47c51a19.key";
+  #      blkDev = "/dev/disk/by-uuid/47c51a19-c455-4f2d-b00e-d4ed7e2e9e16";
+  #      label = "data";
+  #    };
+  #  };
 
   swapDevices = [ ];
 
