@@ -133,6 +133,8 @@
     xorg.xhost
 
     flameshot
+
+    units
   ];
 
   # git
