@@ -131,6 +131,8 @@
     gnomeExtensions.tray-icons-reloaded
 
     xorg.xhost
+
+    flameshot
   ];
 
   # git
