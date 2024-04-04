@@ -211,7 +211,7 @@
       plenary-nvim
       (nvim-treesitter.withPlugins (p: with p;[    # nice syntax highlight
         c cpp python rust javascript typescript svelte
-        nix c_sharp
+        nix c_sharp lua
       ]))
       vim-fugitive                          # git
       vim-slime                             # interactive repl

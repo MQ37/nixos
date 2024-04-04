@@ -2,7 +2,7 @@
 require("copilot").setup({
   suggestion = {
     enabled = true,
-    auto_trigger = true,
+    auto_trigger = false,
     keymap = {
       accept = "<M-l>",
       accept_word = false,
