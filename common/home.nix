@@ -110,6 +110,7 @@
     dsniff
     tor 
     torsocks 
+    tor-browser
 
     # tools
     onionshare-gui
