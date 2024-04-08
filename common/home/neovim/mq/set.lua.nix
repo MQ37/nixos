@@ -19,4 +19,7 @@ vim.opt.backup = false
 
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 5
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 ''
