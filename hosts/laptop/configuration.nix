@@ -12,16 +12,6 @@ common // {
       ./hardware-configuration.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices = {
-    root = {
-      device = "/dev/disk/by-uuid/f24a3adc-5752-4313-ae5f-b59ec9e96299";
-      preLVM = true;
-    };
-  };
-
   networking = common.networking // {
     hostName = "nixos-laptop";
   };
