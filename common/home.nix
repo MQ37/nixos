@@ -136,6 +136,11 @@
     flameshot
 
     units
+
+    pkgs-unstable.distrobox
+
+    dive
+    podman-tui
   ];
 
   # git

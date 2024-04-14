@@ -73,6 +73,15 @@
   programs.virt-manager.enable = true;
   # docker
   virtualisation.docker.enable = true;
+  # podman
+  virtualisation.containers.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    # Create a `docker` alias for podman, to use it as a drop-in replacement
+    dockerCompat = false;
+    # Required for containers under podman-compose to be able to talk to each other.
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
   # flatpak
   services.flatpak.enable = true;
@@ -124,5 +133,6 @@
     EDITOR = "vim";
     VISUAL = "vim";
     DOTNET_CLI_TELEMETRY_OPTOUT = "1";
+    DBX_CONTAINER_MANAGER = "podman";
   };
 }
