@@ -13,6 +13,19 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.luks.devices = {
+    root = {
+      device = "/dev/disk/by-uuid/8621a9b5-69c9-4583-95fd-469b5db6adb6";
+      preLVM = true;
+    };
+    data-drive = {
+      device = "/dev/disk/by-uuid/3e6d39e9-c223-40a3-b4d7-2622f1be0439";
+    };
+  };
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/fdce8adc-bec9-4b10-9234-70be9f1a005b";
       fsType = "ext4";
@@ -31,11 +44,6 @@
   fileSystems."/data" =
     { device = "/dev/disk/by-uuid/37de7b9b-a0c6-4c7f-a801-c8a606266a0a";
       fsType = "ext4";
-    };
-  fileSystems."/tmp" =
-    { device = "none";
-      fsType = "tmpfs";
-      options = [ "size=8G" "mode=777" ];
     };
 
   swapDevices = [ ];

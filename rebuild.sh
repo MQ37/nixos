@@ -16,3 +16,4 @@ if [ "$HOSTNAME" != "$TARGET_HOSTNAME" ]; then
     echo
 fi
 nixos-rebuild switch --flake "path:.#$TARGET_REBUILD"
+

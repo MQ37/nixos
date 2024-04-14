@@ -40,19 +40,6 @@ common // {
     };
   };
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices = {
-    root = {
-      device = "/dev/disk/by-uuid/8621a9b5-69c9-4583-95fd-469b5db6adb6";
-      preLVM = true;
-    };
-    data-drive = {
-      device = "/dev/disk/by-uuid/3e6d39e9-c223-40a3-b4d7-2622f1be0439";
-    };
-  };
-
   networking = common.networking // {
     hostName = "nixos-desktop";
   };
