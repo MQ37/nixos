@@ -30,7 +30,7 @@
   fileSystems."/tmp" =
     { device = "none";
       fsType = "tmpfs";
-      options = [ "size=4G" "mode=777" ];
+      options = [ "size=8G" "mode=777" ];
     };
 
   swapDevices = [ ];
