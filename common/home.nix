@@ -363,6 +363,9 @@
     "org/gnome/terminal/legacy/profiles:/:ef7eeb65-2ccd-44cf-8dec-21c5d6dfda6c" = {
       default-size-columns = 100;
     };
+    "org/gnome/terminal/legacy" = {
+      confirm-close = false;
+    };
   };
 
 
