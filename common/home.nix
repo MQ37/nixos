@@ -141,6 +141,8 @@
 
     dive
     podman-tui
+
+    dbeaver
   ];
 
   # git
@@ -220,6 +222,7 @@
         nix c_sharp lua
       ]))
       vim-fugitive                          # git
+      conflict-marker-vim                   # git conflicts
       vim-slime                             # interactive repl
 
       # LSP section
