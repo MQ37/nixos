@@ -171,6 +171,19 @@
     "\C-h": backward-kill-word
     '';
   };
+  # gnome terminal
+  programs.gnome-terminal = {
+    enable = true;
+    showMenubar = false;
+    themeVariant = "dark";
+    profile."ef7eeb65-2ccd-44cf-8dec-21c5d6dfda6c" = {
+        default = true;
+        visibleName = "personal";
+        audibleBell = false;
+        allowBold = true;
+        boldIsBright = true;
+    };
+  };
   # urxvt terminal
   programs.urxvt = {
     enable = true;
@@ -325,7 +338,8 @@
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Alt>Return";
-      command = "urxvt";
+      #command = "urxvt";
+      command = "gnome-terminal --window";
       name = "Terminal";
     };
     # laptop touchpad tap to click
@@ -345,6 +359,9 @@
     };
     "org/gnome/desktop/input-sources" = {
       sources = [ [ "xkb" "us" ] ];
+    };
+    "org/gnome/terminal/legacy/profiles:/:ef7eeb65-2ccd-44cf-8dec-21c5d6dfda6c" = {
+      default-size-columns = 100;
     };
   };
 
