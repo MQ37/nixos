@@ -111,6 +111,7 @@
     tor 
     torsocks 
     tor-browser
+    rustscan
 
     # tools
     onionshare-gui
