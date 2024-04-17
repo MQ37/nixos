@@ -112,6 +112,15 @@
     torsocks 
     tor-browser
     rustscan
+    gobuster
+    binwalk
+    exiftool
+    sqlmap
+    crunch
+    john
+    steghide
+    stegseek
+    #radare2
 
     # tools
     onionshare-gui
