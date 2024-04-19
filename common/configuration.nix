@@ -17,6 +17,23 @@
     in
       if exists then (import file) else "";
 
+  networking.nameservers = [ "127.0.0.1" "::1" ];
+  networking.networkmanager.dns = "none";
+  #networking.dhcpcd.extraConfig = "nohook resolv.conf";
+  # DoH
+  services.stubby = {
+    enable = true;
+    settings = pkgs.stubby.passthru.settingsExample // {
+      upstream_recursive_servers = [{
+        address_data = "1.1.1.1";
+        tls_auth_name = "cloudflare-dns.com";
+      } {
+        address_data = "1.0.0.1";
+        tls_auth_name = "cloudflare-dns.com";
+      }];
+    };
+   };
+
   # Set your time zone.
   time.timeZone = "Europe/Prague";
 
