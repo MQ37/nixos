@@ -121,6 +121,7 @@
     steghide
     stegseek
     #radare2
+    bettercap
 
     # tools
     onionshare-gui
