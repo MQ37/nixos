@@ -40,6 +40,7 @@
 
     # devel
     gcc
+    jdk
 
     # vim stuff
     fzf
