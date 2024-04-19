@@ -52,17 +52,6 @@
       depends = [ "/" ];
       device = "/dev/mapper/datab";
     };
-  #fileSystems."/disks/data" =
-  #  { #device = "/dev/disk/by-uuid/47c51a19-c455-4f2d-b00e-d4ed7e2e9e16";
-  #    device = "/dev/mapper/data";
-  #    fsType = "ext4";
-  #    encrypted = {
-  #      enable = true;
-  #      keyFile = "/mnt-root/keystore/47c51a19.key";
-  #      blkDev = "/dev/disk/by-uuid/47c51a19-c455-4f2d-b00e-d4ed7e2e9e16";
-  #      label = "data";
-  #    };
-  #  };
 
   swapDevices = [ ];
 

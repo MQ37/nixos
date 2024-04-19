@@ -98,13 +98,47 @@
     dataDir = "/disks/data/syncthing";
   };
 
+  services.transmission = { 
+    enable = true;
+    #Open firewall for RPC
+    openRPCPort = true;
+    # specify rpc-username and rpc-password in json
+    credentialsFile = "/var/lib/secrets/transmission/settings.json";
+    home = "/var/lib/transmission";
+    settings = {
+      rpc-authentication-required = true;
+      rpc-bind-address = "0.0.0.0";
+      rpc-whitelist = "127.0.0.1,10.0.0.16";
+    };
+  };
+  # transmission bind mounts
+  fileSystems."/var/lib/transmission/.incomplete" = {
+    depends = [
+        "/disks/data" 
+    ];
+    device = "/disks/data/torrent_incomplete";
+    fsType = "none";
+    options = [
+      "bind"
+    ];
+  };
+  fileSystems."/var/lib/transmission/Downloads/datab" = {
+    depends = [
+        "/disks/datab" 
+    ];
+    device = "/disks/datab/torrent";
+    fsType = "none";
+    options = [
+      "bind"
+    ];
+  };
+
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 51413 ];
+  networking.firewall.allowedUDPPorts = [ 51413 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   networking.firewall.allowPing = true;
-  #networking.firewall.allowedTCPPorts = [ 80 443 ];
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
