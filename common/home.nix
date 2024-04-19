@@ -73,7 +73,7 @@
     socat # openbsd-netcat alternative
     nmap
     ipcalc  # it is a calculator for the IPv4/v6 addresses
-    openvpn
+    pkgs-unstable.openvpn
     tcpdump
     tcpflow
 
