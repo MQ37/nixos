@@ -122,11 +122,31 @@
       "bind"
     ];
   };
+  fileSystems."/var/lib/transmission/Downloads/dataa" = {
+    depends = [
+        "/disks/dataa" 
+    ];
+    device = "/disks/dataa/torrent";
+    fsType = "none";
+    options = [
+      "bind"
+    ];
+  };
   fileSystems."/var/lib/transmission/Downloads/datab" = {
     depends = [
         "/disks/datab" 
     ];
     device = "/disks/datab/torrent";
+    fsType = "none";
+    options = [
+      "bind"
+    ];
+  };
+  fileSystems."/var/lib/transmission/Downloads/datac" = {
+    depends = [
+        "/disks/datac" 
+    ];
+    device = "/disks/datac/torrent";
     fsType = "none";
     options = [
       "bind"

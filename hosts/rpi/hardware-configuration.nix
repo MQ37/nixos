@@ -30,6 +30,7 @@
     data /dev/disk/by-uuid/47c51a19-c455-4f2d-b00e-d4ed7e2e9e16 /keystore/47c51a19.key
     dataa /dev/disk/by-uuid/ea544a6a-ae53-4f71-9339-6cb66e633640 /keystore/ea544a6a.key
     datab /dev/disk/by-uuid/1d71f8ac-83c8-4094-bcd2-478751d3c597 /keystore/1d71f8ac.key
+    datac /dev/disk/by-uuid/59468fec-9949-4db9-a4db-6453186bd554 /keystore/59468fec.key
   '';
 
   fileSystems."/" =
@@ -51,6 +52,11 @@
     {
       depends = [ "/" ];
       device = "/dev/mapper/datab";
+    };
+  fileSystems."/disks/datac" =
+    {
+      depends = [ "/" ];
+      device = "/dev/mapper/datac";
     };
 
   swapDevices = [ ];
