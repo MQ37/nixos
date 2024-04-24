@@ -155,6 +155,8 @@
     podman-tui
 
     dbeaver
+
+    logseq
   ];
 
   # git
