@@ -157,6 +157,8 @@
     dbeaver
 
     logseq
+
+    obs-studio
   ];
 
   # git
