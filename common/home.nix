@@ -159,6 +159,8 @@
     logseq
 
     obs-studio
+
+    hdfview
   ];
 
   # git
