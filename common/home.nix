@@ -161,6 +161,8 @@
     obs-studio
 
     hdfview
+
+    bfg-repo-cleaner
   ];
 
   # git
