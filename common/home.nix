@@ -54,6 +54,8 @@
     ])) poetry
     rustc cargo rust-analyzer # rust stuff
     nodejs_21
+    nodePackages.vscode-css-languageserver-bin # css lsp
+    nodePackages.vscode-html-languageserver-bin # html lsp
     nodePackages.typescript-language-server # ts lsp
     nodePackages.svelte-language-server # svelte lsp
     tailwindcss-language-server # tailwindcss lsp
