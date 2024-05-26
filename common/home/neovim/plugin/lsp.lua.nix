@@ -38,6 +38,10 @@ require('lspconfig').tsserver.setup({})
 require('lspconfig').svelte.setup({})
 require('lspconfig').tailwindcss.setup({})
 require('lspconfig').csharp_ls.setup({})
-require('lspconfig').html.setup({})
-require('lspconfig').cssls.setup({})
+require('lspconfig').html.setup({
+    cmd = { "html-languageserver", "--stdio" }
+})
+require('lspconfig').cssls.setup({
+    cmd = { "css-languageserver", "--stdio" }
+})
 ''
