@@ -80,12 +80,15 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mq = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" "libvirtd" "kvm" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
     ];
   };
 
+  # virtualbox
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "mq" ];
   # libvirtd
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;

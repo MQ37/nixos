@@ -165,6 +165,8 @@
     hdfview
 
     bfg-repo-cleaner
+
+    android-studio
   ];
 
   # git
