@@ -383,6 +383,7 @@
     };
     "org/gnome/desktop/input-sources" = {
       sources = [ [ "xkb" "us" ] ];
+      xkb-options = [ "caps:escape" ];
     };
     "org/gnome/terminal/legacy/profiles:/:ef7eeb65-2ccd-44cf-8dec-21c5d6dfda6c" = {
       default-size-columns = 100;

@@ -18,23 +18,28 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.luks.devices = {
     root = {
-      device = "/dev/disk/by-uuid/f24a3adc-5752-4313-ae5f-b59ec9e96299";
+      device = "/dev/disk/by-uuid/ad49f96f-9569-4c4e-b8cb-f731bf99c5f4";
       preLVM = true;
     };
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/fcf12d18-c98d-405c-89e8-72ae302a95ff";
+    { device = "/dev/disk/by-uuid/14066901-1856-4f06-9e49-309a5e7e42be";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/B778-5553";
+    { device = "/dev/disk/by-uuid/C488-F161";
       fsType = "vfat";
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/8437b4ba-4fb6-405b-bc05-4a403b8c7b4a";
+    { device = "/dev/disk/by-uuid/00790215-fe57-4d91-b143-eb2b3ded19a8";
+      fsType = "ext4";
+    };
+
+  fileSystems."/var" =
+    { device = "/dev/disk/by-uuid/d8011765-34f9-40c4-bb62-e64ddfb7296c";
       fsType = "ext4";
     };
 
