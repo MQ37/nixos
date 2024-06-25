@@ -104,6 +104,7 @@
     yt-dlp
     ffmpeg
     qrencode
+    imagemagick
 
     # docs
     libreoffice
