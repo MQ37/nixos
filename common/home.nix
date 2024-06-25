@@ -146,6 +146,7 @@
 
     # gnome
     gnomeExtensions.tray-icons-reloaded
+    gnomeExtensions.thinkpad-battery-threshold
 
     xorg.xhost
 
@@ -381,6 +382,7 @@
     "org/gnome/shell" = {
       enabled-extensions = [
         "trayIconsReloaded@selfmade.pl"
+        "thinkpad-battery-threshold@marcosdalvarez.org"
       ];
     };
     "org/gnome/desktop/input-sources" = {

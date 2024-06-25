@@ -10,8 +10,12 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "ehci_pci" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [
+    "kvm-amd"
+    "tp_smapi"
+  ];
+  # Thinkpad smapi
+  boot.extraModulePackages = with config.boot.kernelPackages; [ tp_smapi ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
