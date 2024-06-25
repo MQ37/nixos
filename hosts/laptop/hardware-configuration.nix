@@ -8,9 +8,9 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+  boot.initrd.availableKernelModules = [ "nvme" "ehci_pci" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   # Use the systemd-boot EFI boot loader.
@@ -18,28 +18,28 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.luks.devices = {
     root = {
-      device = "/dev/disk/by-uuid/ad49f96f-9569-4c4e-b8cb-f731bf99c5f4";
+      device = "/dev/disk/by-uuid/5be15e22-812e-4113-81bb-2374fc0bf650";
       preLVM = true;
     };
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/14066901-1856-4f06-9e49-309a5e7e42be";
+    { device = "/dev/disk/by-uuid/cf0c4412-a998-47a3-b1e6-5352c0ad6f8b";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C488-F161";
+    { device = "/dev/disk/by-uuid/B5CC-F02B";
       fsType = "vfat";
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/00790215-fe57-4d91-b143-eb2b3ded19a8";
+    { device = "/dev/disk/by-uuid/01adaf74-90a0-4c99-a3bf-ff5a002539ad";
       fsType = "ext4";
     };
 
   fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/d8011765-34f9-40c4-bb62-e64ddfb7296c";
+    { device = "/dev/disk/by-uuid/657fb50f-398b-436c-b5b4-07f35c641206";
       fsType = "ext4";
     };
 
@@ -53,5 +53,5 @@
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
