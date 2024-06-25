@@ -53,7 +53,7 @@
       requests
     ])) poetry
     rustc cargo rust-analyzer # rust stuff
-    nodejs_21
+    nodejs_22
     nodePackages.vscode-css-languageserver-bin # css lsp
     nodePackages.vscode-html-languageserver-bin # html lsp
     nodePackages.typescript-language-server # ts lsp
@@ -158,7 +158,7 @@
     dive
     podman-tui
 
-    dbeaver
+    dbeaver-bin
 
     logseq
 
@@ -323,7 +323,7 @@
     enable = true;
     enableSshSupport = true;
     enableBashIntegration = true;
-    pinentryFlavor = "curses";
+    #pinentryFlavor = "curses";
   };
 
   # GNOME settings
