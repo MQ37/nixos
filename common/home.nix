@@ -79,6 +79,7 @@
     pkgs-unstable.openvpn
     tcpdump
     tcpflow
+    dnsmasq
 
     # nix stuff
     manix
