@@ -26,6 +26,7 @@
     gawk
     lsof
     ncdu
+    lm_sensors
 
     httpie
     openssl
@@ -62,6 +63,13 @@
     dotnet-sdk_8 # dotnet
     pkgs-unstable.csharp-ls
 
+    # dev
+    bfg-repo-cleaner
+    android-studio
+    dive
+    podman-tui
+    dbeaver-bin
+
     # terminals
     gnome-console
 
@@ -92,6 +100,7 @@
     teams-for-linux
     thunderbird
     zoom-us
+    deltachat-desktop
 
     # passwords
     keepassxc
@@ -105,6 +114,8 @@
     ffmpeg
     qrencode
     imagemagick
+    obs-studio
+    flameshot
 
     # docs
     libreoffice
@@ -146,29 +157,17 @@
 
     # gnome
     gnomeExtensions.tray-icons-reloaded
+    gnomeExtensions.freon
 
     xorg.xhost
-
-    flameshot
 
     units
 
     pkgs-unstable.distrobox
 
-    dive
-    podman-tui
-
-    dbeaver-bin
-
     logseq
 
-    obs-studio
-
     hdfview
-
-    bfg-repo-cleaner
-
-    android-studio
   ];
 
   # git
@@ -381,6 +380,7 @@
     "org/gnome/shell" = {
       enabled-extensions = [
         "trayIconsReloaded@selfmade.pl"
+        "freon@UshakovVasilii_Github.yahoo.com"
       ];
     };
     "org/gnome/desktop/input-sources" = {
