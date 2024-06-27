@@ -333,6 +333,10 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+      show-battery-percentage = true;
+    };
+    "org/gnome/settings-daemon/plugins/power" = {
+      sleep-inactive-ac-type = "nothing";
     };
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Shift><Alt>c" ];
