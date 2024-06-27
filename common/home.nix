@@ -28,6 +28,10 @@
     ncdu
     lm_sensors
 
+    # diag
+    nvme-cli
+    smartmontools
+
     httpie
     openssl
 
