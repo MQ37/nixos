@@ -172,6 +172,8 @@
     logseq
 
     hdfview
+
+    rpi-imager
   ];
 
   # git
