@@ -28,6 +28,8 @@
     ncdu
     lm_sensors
 
+    rlwrap
+
     # diag
     nvme-cli
     smartmontools
@@ -120,6 +122,7 @@
     imagemagick
     obs-studio
     flameshot
+    pdfchain
 
     # docs
     libreoffice
