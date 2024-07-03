@@ -114,6 +114,7 @@
 
     # crypto
     veracrypt
+    tomb
 
     # multimedia
     gimp
