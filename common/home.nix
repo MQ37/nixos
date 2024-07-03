@@ -40,8 +40,6 @@
     ansible
     sshpass
 
-    sqlite
-
     # ssg
     zola
 
@@ -75,6 +73,7 @@
     dive
     podman-tui
     dbeaver-bin
+    sqlite
 
     # terminals
     gnome-console
@@ -112,6 +111,9 @@
     # passwords
     keepassxc
     enpass
+
+    # crypto
+    veracrypt
 
     # multimedia
     gimp
