@@ -24,12 +24,14 @@
     root = {
       device = "/dev/disk/by-uuid/5be15e22-812e-4113-81bb-2374fc0bf650";
       preLVM = true;
+      allowDiscards = true;
     };
   };
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/cf0c4412-a998-47a3-b1e6-5352c0ad6f8b";
       fsType = "ext4";
+      options = [ "noatime" "discard" ];
     };
 
   fileSystems."/boot" =
@@ -40,11 +42,13 @@
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/01adaf74-90a0-4c99-a3bf-ff5a002539ad";
       fsType = "ext4";
+      options = [ "noatime" "discard" ];
     };
 
   fileSystems."/var" =
     { device = "/dev/disk/by-uuid/657fb50f-398b-436c-b5b4-07f35c641206";
       fsType = "ext4";
+      options = [ "noatime" "discard" ];
     };
 
   swapDevices = [ ];
