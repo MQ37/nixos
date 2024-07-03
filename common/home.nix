@@ -94,6 +94,7 @@
     tcpdump
     tcpflow
     dnsmasq
+    eduvpn-client
 
     # nix stuff
     manix
