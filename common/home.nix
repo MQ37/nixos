@@ -343,6 +343,11 @@
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       show-battery-percentage = true;
+      clock-show-seconds=true;
+      clock-show-weekday=true;
+    };
+    "org/gnome/desktop/calendar" = {
+      show-weekdate=true;
     };
     "org/gnome/settings-daemon/plugins/power" = {
       sleep-inactive-ac-type = "nothing";
