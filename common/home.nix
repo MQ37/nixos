@@ -291,6 +291,7 @@
 
       # copilot
       copilot-lua
+      CopilotChat-nvim
     ];
   };
   # bash
