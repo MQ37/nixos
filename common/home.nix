@@ -171,6 +171,9 @@
     shattered-pixel-dungeon
     dwarf-fortress
     openttd
+    mindustry
+    the-powder-toy
+    endless-sky
 
     # gnome
     gnomeExtensions.tray-icons-reloaded
