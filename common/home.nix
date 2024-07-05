@@ -170,6 +170,7 @@
     cataclysm-dda
     shattered-pixel-dungeon
     dwarf-fortress
+    openttd
 
     # gnome
     gnomeExtensions.tray-icons-reloaded
