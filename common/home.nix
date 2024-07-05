@@ -27,6 +27,8 @@
     lsof
     ncdu
     lm_sensors
+    usbutils
+    dmidecode
 
     rlwrap
 
@@ -165,6 +167,9 @@
 
     # games
     prismlauncher
+    cataclysm-dda
+    shattered-pixel-dungeon
+    dwarf-fortress
 
     # gnome
     gnomeExtensions.tray-icons-reloaded
