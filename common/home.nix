@@ -175,6 +175,7 @@
     the-powder-toy
     endless-sky
     curseofwar
+    minetest
 
     # gnome
     gnomeExtensions.tray-icons-reloaded
