@@ -174,6 +174,7 @@
     mindustry
     the-powder-toy
     endless-sky
+    curseofwar
 
     # gnome
     gnomeExtensions.tray-icons-reloaded
