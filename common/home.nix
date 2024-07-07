@@ -176,6 +176,11 @@
     endless-sky
     curseofwar
     minetest
+    openxcom
+    warzone2100
+    crawlTiles
+    wesnoth
+    zeroad
 
     # gnome
     gnomeExtensions.tray-icons-reloaded
