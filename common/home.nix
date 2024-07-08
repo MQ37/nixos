@@ -38,9 +38,9 @@
 
     httpie
     openssl
-
     ansible
     sshpass
+    sshfs
 
     # ssg
     zola
