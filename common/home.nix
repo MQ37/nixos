@@ -97,6 +97,7 @@
     dnsmasq
     eduvpn-client
     iperf
+    iperf2
 
     # nix stuff
     manix
