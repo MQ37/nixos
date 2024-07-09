@@ -96,6 +96,7 @@
     tcpflow
     dnsmasq
     eduvpn-client
+    iperf
 
     # nix stuff
     manix
