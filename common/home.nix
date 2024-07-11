@@ -199,6 +199,8 @@
     hdfview
 
     rpi-imager
+
+    dos2unix
   ];
 
   # git
