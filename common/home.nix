@@ -98,6 +98,8 @@
     eduvpn-client
     iperf
     iperf2
+    inetutils
+    arp-scan
 
     # nix stuff
     manix
