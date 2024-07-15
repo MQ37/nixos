@@ -287,7 +287,8 @@
     vimAlias = true;
     extraLuaConfig = import ./home/neovim/init.lua.nix;
     plugins = with pkgs.vimPlugins; [
-      vim-airline                           # nice statusbar
+      galaxyline-nvim                       # statusline
+      nvim-web-devicons                     # icons
       telescope-nvim                        # fuzzy search
       plenary-nvim
       (nvim-treesitter.withPlugins (p: with p;[    # nice syntax highlight

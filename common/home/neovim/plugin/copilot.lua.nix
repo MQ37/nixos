@@ -1,8 +1,10 @@
 ''
-require("copilot").setup({
+local copilot = require("copilot")
+
+copilot.setup({
   suggestion = {
     enabled = true,
-    auto_trigger = false,
+    auto_trigger = true,
     keymap = {
       accept = "<M-l>",
       accept_word = false,
@@ -19,6 +21,5 @@ require("copilot").setup({
   }
 })
 
-local suggestion = require("copilot.suggestion")
-vim.keymap.set("n", "<leader>cpa", suggestion.toggle_auto_trigger)
+vim.keymap.set("n", "<leader>cpa", ":Copilot toggle<CR>", { noremap = true, silent = true })
 ''
