@@ -75,7 +75,7 @@
     dive
     podman-tui
     dbeaver-bin
-    sqlite
+    sqlite-interactive
 
     # terminals
     gnome-console
