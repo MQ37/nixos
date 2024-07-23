@@ -36,6 +36,7 @@
     nvme-cli
     smartmontools
 
+    insomnia
     httpie
     openssl
     ansible
