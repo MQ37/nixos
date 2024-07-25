@@ -42,6 +42,8 @@
     ansible
     sshpass
     sshfs
+    sshuttle
+    shadowsocks-libev
 
     # ssg
     zola
