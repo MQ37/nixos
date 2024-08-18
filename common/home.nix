@@ -193,18 +193,15 @@
     gnomeExtensions.tray-icons-reloaded
     gnomeExtensions.freon
 
-    xorg.xhost
-
-    units
-
+    # envs
     pkgs-unstable.distrobox
+    bottles
 
+    xorg.xhost
+    units
     logseq
-
     hdfview
-
     rpi-imager
-
     dos2unix
   ];
 

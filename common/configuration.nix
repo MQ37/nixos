@@ -17,10 +17,15 @@
     in
       if exists then (import file) else "";
 
+  # DoT
   networking.nameservers = [ "127.0.0.1" "::1" ];
   networking.networkmanager.dns = "none";
-  #networking.dhcpcd.extraConfig = "nohook resolv.conf";
-  # DoH
+
+  # backup
+  #networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  #networking.networkmanager.dns = "default";
+
+  # DoT
   services.stubby = {
     enable = true;
     settings = pkgs.stubby.passthru.settingsExample // {
