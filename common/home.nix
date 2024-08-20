@@ -114,7 +114,7 @@
     skypeforlinux
     teams-for-linux
     thunderbird
-    zoom-us
+    #zoom-us
     deltachat-desktop
 
     # passwords
