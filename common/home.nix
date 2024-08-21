@@ -114,7 +114,6 @@
     skypeforlinux
     teams-for-linux
     thunderbird
-    #zoom-us
     deltachat-desktop
 
     # passwords
@@ -183,7 +182,6 @@
     endless-sky
     curseofwar
     minetest
-    openxcom
     warzone2100
     crawlTiles
     wesnoth
