@@ -164,9 +164,10 @@
     # rss
     rssguard
 
-    # wallets
+    # digital currency
     sparrow
     monero-gui
+    pkgs-unstable.bisq-desktop
 
     # torrent
     transmission-gtk
