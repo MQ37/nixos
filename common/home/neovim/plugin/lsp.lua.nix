@@ -44,4 +44,6 @@ require('lspconfig').html.setup({
 require('lspconfig').cssls.setup({
     cmd = { "css-languageserver", "--stdio" }
 })
+require('lspconfig').elixirls.setup({})
+require('lspconfig').crystalline.setup({})
 ''

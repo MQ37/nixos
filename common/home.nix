@@ -73,8 +73,8 @@
     pkgs-unstable.csharp-ls
     bun
     go
-    crystal
-    elixir
+    crystal crystalline
+    elixir elixir-ls
 
     # dev
     bfg-repo-cleaner
