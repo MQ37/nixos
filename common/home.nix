@@ -72,7 +72,7 @@
     dotnet-sdk_8 # dotnet
     pkgs-unstable.csharp-ls
     bun
-    go
+    go gopls
     crystal crystalline
     elixir elixir-ls
 
