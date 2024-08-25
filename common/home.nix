@@ -71,6 +71,10 @@
     tailwindcss-language-server # tailwindcss lsp
     dotnet-sdk_8 # dotnet
     pkgs-unstable.csharp-ls
+    bun
+    go
+    crystal
+    elixir
 
     # dev
     bfg-repo-cleaner
