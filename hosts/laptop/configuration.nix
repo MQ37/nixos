@@ -18,6 +18,7 @@ common // {
 
   services = common.services // {
     fstrim.enable = true;
+    openssh.enable = false;
   };
 
   # Copy the NixOS configuration file and link it from the resulting system
