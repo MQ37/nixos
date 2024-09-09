@@ -78,11 +78,15 @@
 
     # dev
     bfg-repo-cleaner
-    android-studio
     dive
     podman-tui
     dbeaver-bin
     sqlite-interactive
+
+    # android dev
+    android-studio
+    android-tools
+    pkgs-unstable.jadx
 
     # terminals
     gnome-console
