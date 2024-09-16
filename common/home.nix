@@ -119,6 +119,7 @@
     appimage-run
 
     # comms
+    discord
     skypeforlinux
     teams-for-linux
     thunderbird
