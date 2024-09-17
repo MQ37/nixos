@@ -196,6 +196,7 @@
     crawlTiles
     wesnoth
     zeroad
+    widelands
 
     # gnome
     gnomeExtensions.tray-icons-reloaded
