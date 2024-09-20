@@ -148,6 +148,9 @@
     # docs
     libreoffice
 
+    # editors
+    apostrophe
+
     # haxy stuff
     wireshark
     ghidra
