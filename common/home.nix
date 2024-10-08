@@ -29,6 +29,7 @@
     lm_sensors
     usbutils
     dmidecode
+    pciutils
 
     rlwrap
 
@@ -208,6 +209,9 @@
     # envs
     pkgs-unstable.distrobox
     bottles
+
+    # school
+    rstudio
 
     xorg.xhost
     units
