@@ -152,6 +152,9 @@
     # editors
     apostrophe
 
+    # dictionary
+    sdcv
+
     # haxy stuff
     wireshark
     ghidra
