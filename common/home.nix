@@ -145,6 +145,7 @@
     obs-studio
     flameshot
     pdfchain
+    graphviz
 
     # docs
     libreoffice
