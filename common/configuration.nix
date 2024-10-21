@@ -165,10 +165,12 @@
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
     22000 # syncthing
+    53317 # localsend
   ];
   networking.firewall.allowedUDPPorts = [
     22000 # syncthing quic
     21027 # syncthing discovery
+    53317 # localsend multicast
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

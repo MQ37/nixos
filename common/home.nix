@@ -175,8 +175,9 @@
     #radare2
     bettercap
 
-    # tools
+    # file share
     onionshare-gui
+    localsend
 
     # rss
     rssguard

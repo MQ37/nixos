@@ -7,4 +7,4 @@
 + import ./galaxyline.lua.nix
 #+ import ./copilot.lua.nix
 + import ./slime.lua.nix
-+ import ./copilotchat.lua.nix
+#+ import ./copilotchat.lua.nix
