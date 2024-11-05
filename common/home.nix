@@ -146,6 +146,8 @@
     flameshot
     pdfchain
     graphviz
+    pdfsam-basic
+    ghostscript
 
     # docs
     libreoffice
