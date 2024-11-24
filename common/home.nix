@@ -154,6 +154,7 @@
 
     # editors
     apostrophe
+    vscodium
 
     # dictionary
     sdcv
